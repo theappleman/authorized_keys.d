@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat */*.pub | ssh "$@" tee -a '~/.ssh/authorized_keys'
+
