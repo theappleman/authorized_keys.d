@@ -1,0 +1,13 @@
+#!/bin/bash
+
+akdir=$(dirname $0)
+sshdir=$HOME/.ssh
+
+for i in rsa ecdsa ed25519; do
+	test -f $akdir/$i || mkdir -p $akdir/$i
+	if test -f $sshdir/id_$i.pub; then
+		cp -v $sshdir/id_$i.pub $akdir/$i/$(hostname).pub
+	else
+		echo No key for type $i >&2
+	fi
+done
