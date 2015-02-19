@@ -1,6 +1,6 @@
 #!/bin/bash
 
 sort -u */*.pub | ssh "$@" tee -a '~/.ssh/authorized_keys.new'
-ssh "$@" mv '~/.ssh/authorized_keys ~/.ssh/authorized_keys.old'
+ssh "$@" cp '~/.ssh/authorized_keys ~/.ssh/authorized_keys.old'
 ssh "$@" mv '~/.ssh/authorized_keys.new ~/.ssh/authorized_keys'
 
