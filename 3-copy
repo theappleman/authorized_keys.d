@@ -4,9 +4,9 @@ set -e
 
 ssh() {
 	/usr/bin/ssh \
-			-oControlMaster=yes \
-			-oControlPersist=auto \
-			-oControlPath=/tmp/%u@%h.sock \
+			-oControlMaster=auto \
+			-oControlPersist=yes \
+			-oControlPath=/tmp/%r@%h.sock \
 			-oStrictHostKeyChecking=no \
 			-oUserKnownHostsFile=/dev/null \
 			"$@"
