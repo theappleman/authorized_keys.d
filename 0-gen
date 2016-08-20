@@ -7,5 +7,5 @@ else
 fi
 
 test -f ~/.ssh/id_rsa || ssh-keygen -N '' -t rsa -b 8192 -f ~/.ssh/id_rsa
-test -f ~/.ssh/id_ecdsa || ssh-keygen -N '' -t ecdsa -b 512 -f ~/.ssh/id_ecdsa
+test -f ~/.ssh/id_ecdsa || ssh-keygen -N '' -t ecdsa -b 521 -f ~/.ssh/id_ecdsa
 test -f ~/.ssh/id_ed25519 || ssh-keygen -N '' -t ed25519 -b 16384 -f ~/.ssh/id_ed25519
